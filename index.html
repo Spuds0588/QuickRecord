@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickRecord - The Easiest Screen Recorder</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"></script>
+    <style>
+        :root {
+            --fire-brick: #c1121f;
+            --prussian-blue: #003049;
+            --air-superiority-blue: #669bbc;
+            --white: #ffffff;
+            --light-grey: #f5f5f5;
+            --dark-grey: #4a4a4a;
+            --dark-box-bg: #2b2b2b;
+        }
+
+        /* --- General & Typographic Styles --- */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: var(--white);
+            color: var(--dark-grey);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .section-heading {
+            color: var(--prussian-blue);
+            font-weight: 700;
+        }
+
+        /* --- Hero Section --- */
+        .hero.is-primary {
+            background-color: var(--prussian-blue);
+        }
+        .hero .title {
+            color: var(--white);
+        }
+        .hero .subtitle {
+            color: var(--air-superiority-blue);
+        }
+        .hero-cta.button {
+            background-color: var(--fire-brick);
+            transition: background-color 0.3s ease;
+        }
+        .hero-cta.button:hover {
+            background-color: #a50f1a;
+        }
+        /* Mobile fix for the hero button */
+        @media screen and (max-width: 768px) {
+            .hero-cta.button {
+                white-space: normal; /* Allow text to wrap */
+                height: auto;
+                width: 90%;
+                max-width: 380px;
+                font-size: 1.2rem; /* Slightly smaller font */
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* --- Content Sections --- */
+        .section.is-light {
+            background-color: var(--light-grey);
+        }
+        .box {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #dbdbdb;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        .checklist .icon {
+            vertical-align: middle;
+        }
+        
+        /* --- Dark Theme for Boxes --- */
+        .box.is-dark-theme {
+            background-color: var(--dark-box-bg);
+            color: var(--light-grey);
+            border-color: #4a4a4a;
+        }
+        .box.is-dark-theme .title {
+            color: var(--white);
+        }
+        .box.is-dark-theme p, .box.is-dark-theme li {
+            color: var(--light-grey);
+        }
+        .box.is-dark-theme .checklist .icon.has-text-success { color: #23d160; }
+        .box.is-dark-theme .checklist .icon.has-text-danger { color: #ff3860; }
+        .box.is-dark-theme .step-icon { color: var(--air-superiority-blue); }
+
+        /* --- Call to Action Section --- */
+        #bookmarklet-cta-box {
+            border: 2px dashed var(--air-superiority-blue);
+            background-color: var(--white);
+        }
+        .bookmarklet-link {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--fire-brick);
+            color: var(--white);
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: grab;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(193, 18, 31, 0.3);
+        }
+        .bookmarklet-link:hover {
+            background-color: #a50f1a;
+            transform: scale(1.05);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--prussian-blue);
+            color: var(--light-grey);
+        }
+        .footer a { color: var(--air-superiority-blue); }
+        .footer a:hover { color: var(--white); }
+
+    </style>
+</head>
+<body>
+    <section class="hero is-primary is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title is-size-1-desktop is-size-2-mobile has-text-weight-bold">
+                    The Easiest Way to Record Your Screen.
+                </h1>
+                <h2 class="subtitle is-size-4-desktop is-size-5-mobile">
+                    A simple, reliable recorder that lives in your browser. No installation needed.
+                </h2>
+                <a href="#call-to-action" class="button is-large is-rounded hero-cta mt-5">
+                    <span class="icon is-left"><i class="fas fa-gift"></i></span>
+                    <span>Get Your Free Recorder Now</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem" class="section">
+        <div class="container">
+            <h2 class="title is-2 has-text-centered section-heading">Tired of Clunky Recording Software?</h2>
+            <div class="columns is-centered">
+                <div class="column is-10-tablet is-8-desktop">
+                    <div class="box p-5 is-dark-theme">
+                        <p class="is-size-5 has-text-centered mb-5">You need to record a quick bug report, create a tutorial, or capture a demo. But traditional screen recorders are often overkill—they're slow, complicated, and require installation.</p>
+                        <div class="columns is-mobile">
+                            <div class="column">
+                                <ul class="checklist has-text-left">
+                                    <li><span class="icon has-text-danger mr-2"><i class="fas fa-times-circle"></i></span>Wasting time on installs.</li>
+                                    <li><span class="icon has-text-danger mr-2"><i class="fas fa-times-circle"></i></span>Dealing with complex menus.</li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul class="checklist has-text-left">
+                                    <li><span class="icon has-text-success mr-2"><i class="fas fa-check-circle"></i></span>You want an instant solution.</li>
+                                    <li><span class="icon has-text-success mr-2"><i class="fas fa-check-circle"></i></span>You need something that just works.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="solution" class="section is-light">
+        <div class="container has-text-centered">
+            <h2 class="title is-2 section-heading">Introducing QuickRecord</h2>
+            <p class="is-size-5 mb-5">QuickRecord is a powerful recorder that launches from your bookmarks bar. It's instant, private, and works everywhere you browse, using your browser's built-in capabilities for speed and security.</p>
+            <figure class="image is-16by9 box">
+                <img src="https://i.imgur.com/GwnhV4g.gif" alt="QuickRecord Bookmarklet in Action">
+            </figure>
+        </div>
+    </section>
+
+    <section id="process" class="section">
+        <div class="container has-text-centered">
+            <h2 class="title is-2 section-heading">How it Works in 3 Simple Steps</h2>
+            <div class="columns is-centered is-multiline">
+                <div class="column is-one-third-desktop is-full-mobile">
+                    <div class="box p-5 is-dark-theme">
+                        <p class="step-icon"><i class="fas fa-hand-rock"></i></p>
+                        <h3 class="title is-4">Step 1: Drag to Bar</h3>
+                        <p>Drag the QuickRecord button from this page onto your browser's bookmarks bar.</p>
+                    </div>
+                </div>
+                <div class="column is-one-third-desktop is-full-mobile">
+                    <div class="box p-5 is-dark-theme">
+                        <p class="step-icon"><i class="fas fa-mouse-pointer"></i></p>
+                        <h3 class="title is-4">Step 2: Click to Launch</h3>
+                        <p>On any webpage, click your "QuickRecord" bookmark to instantly open the recorder.</p>
+                    </div>
+                </div>
+                <div class="column is-one-third-desktop is-full-mobile">
+                    <div class="box p-5 is-dark-theme">
+                        <p class="step-icon"><i class="fas fa-download"></i></p>
+                        <h3 class="title is-4">Step 3: Record & Download</h3>
+                        <p>Hit record, and when you're done, download the video file directly to your computer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="call-to-action" class="section is-light">
+        <div class="container has-text-centered">
+            <h2 class="title is-2 section-heading">Get QuickRecord Now. It's Free!</h2>
+            <p class="is-size-5 mb-5">Ready to start recording in seconds? Drag the red button below to your bookmarks bar.</p>
+            <div class="columns is-centered">
+                <div class="column is-8-tablet is-6-desktop">
+                    <div id="bookmarklet-cta-box" class="box p-5">
+                        <a class="bookmarklet-link" href="javascript:(() => { const b64 = 'CjwhRE9DVFlQRSBodG1sPgo8aHRtbCBsYW5nPSJlbiI+CjxoZWFkPgogICAgPG1ldGEgY2hhcnNldD0iVVRGLTgiPgogICAgPHRpdGxlPlNpbXBsZSAmIFJlbGlhYmxlIFJlY29yZGVyPC90aXRsZT4KICAgIDxzdHlsZT4KICAgICAgICBib2R5IHsgZm9udC1mYW1pbHk6IC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgJ1NlZ29lIFVJJywgUm9ib3RvLCBIZWx2ZXRpY2EsIEFyaWFsLCBzYW5zLXNlcmlmOyBiYWNrZ3JvdW5kLWNvbG9yOiAjZjBmMmY1OyBjb2xvcjogIzFjMWUyMTsgZGlzcGxheTogZmxleDsganVzdGlmeS1jb250ZW50OiBjZW50ZXI7IGFsaWduLWl0ZW1zOiBjZW50ZXI7IG1pbi1oZWlnaHQ6IDEwMHZoOyBtYXJnaW46IDIwcHg7IH0KICAgICAgICAuY29udGFpbmVyIHsgd2lkdGg6IDEwMCU7IG1heC13aWR0aDogNTAwcHg7IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IGJvcmRlci1yYWRpdXM6IDEycHg7IGJveC1zaGFkb3c6IDAgOHB4IDI0cHggcmdiYSgwLCAwLCAwLCAwLjEpOyBwYWRkaW5nOiAyNHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IH0KICAgICAgICBoMSB7IGZvbnQtc2l6ZTogMjRweDsgbWFyZ2luOiAwIDAgMTJweDsgfQogICAgICAgIHAgeyBmb250LXNpemU6IDE1cHg7IGNvbG9yOiAjNjA2NzcwOyBsaW5lLWhlaWdodDogMS41OyBtYXJnaW4tYm90dG9tOiAyMHB4OyB9CiAgICAgICAgI3Zpc2liaWxpdHktd2FybmluZyB7IGJhY2tncm91bmQtY29sb3I6ICNmZmZiZTY7IGNvbG9yOiAjNWMzYzAwOyBib3JkZXI6IDFweCBzb2xpZCAjZmZlNThmOyBib3JkZXItcmFkaXVzOiA4cHg7IHBhZGRpbmc6IDEycHggMTVweDsgbWFyZ2luLWJvdHRvbTogMjBweDsgdGV4dC1hbGlnbjogbGVmdDsgZm9udC1zaXplOiAxNHB4OyB9IAogICAgICAgICN2aXNpYmlsaXR5LXdhcm5pbmcgc3Ryb25nIHsgY29sb3I6ICNkNDZiMDg7IH0KICAgICAgICAjcHJldmlldy1hcmVhIHsgcG9zaXRpb246IHJlbGF0aXZlOyBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwMDAwOyBhc3BlY3QtcmF0aW86IDE2IC8gOTsgYm9yZGVyLXJhZGl1czogOHB4OyBtYXJnaW4tYm90dG9tOiAyMHB4OyBvdmVyZmxvdzogaGlkZGVuOyB9CiAgICAgICAgI2NvbXBvc2l0aW5nLWNhbnZhcyB7IGRpc3BsYXk6IG5vbmU7IH0KICAgICAgICAjc2NyZWVuLXByZXZpZXcgeyB3aWR0aDogMTAwJTsgaGVpZ2h0OiAxMDAlOyB9CiAgICAgICAgI3dlYmNhbS1wcmV2aWV3IHsgcG9zaXRpb246IGFic29sdXRlOyB3aWR0aDogMTMwcHg7IGhlaWdodDogYXV0bzsgYXNwZWN0LXJhdGlvOiA0IC8gMzsgYm90dG9tOiAxNXB4OyByaWdodDogMTVweDsgYm9yZGVyOiAycHggc29saWQgcmdiYSgyNTUsIDI1NSwgMjU1LCAwLjgpOyBib3JkZXItcmFkaXVzOiA4cHg7IGJveC1zaGFkb3c6IDAgMnB4IDVweCByZ2JhKDAsIDAsIDAsIDAuMyk7IGRpc3BsYXk6IG5vbmU7IGJhY2tncm91bmQtY29sb3I6ICMzMzM7IH0KICAgICAgICAKICAgICAgICAjc2V0dGluZ3MtZ3VpZGUgeyB0ZXh0LWFsaWduOiBsZWZ0OyBtYXJnaW4tYm90dG9tOiAyMHB4OyBib3JkZXI6IDFweCBzb2xpZCAjZGRkOyBib3JkZXItcmFkaXVzOiA4cHg7IH0KICAgICAgICAjc2V0dGluZ3MtZ3VpZGUgc3VtbWFyeSB7IGZvbnQtd2VpZ2h0OiA2MDA7IGN1cnNvcjogcG9pbnRlcjsgcGFkZGluZzogMTJweDsgbGlzdC1zdHlsZTogbm9uZTsgZGlzcGxheTogZmxleDsgYWxpZ24taXRlbXM6IGNlbnRlcjsganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOyB9CiAgICAgICAgI3NldHRpbmdzLWd1aWRlIHN1bW1hcnk6Oi13ZWJraXQtZGV0YWlscy1tYXJrZXIgeyBkaXNwbGF5OiBub25lOyB9CiAgICAgICAgI3NldHRpbmdzLWd1aWRlIHN1bW1hcnk6OmFmdGVyIHsgY29udGVudDogJ1srXSc7IGZvbnQtZmFtaWx5OiBtb25vc3BhY2U7IH0KICAgICAgICAjc2V0dGluZ3MtZ3VpZGVbb3Blbl0geyBib3JkZXItYm90dG9tOiAxcHggc29saWQgI2RkZDsgfQogICAgICAgICNzZXR0aW5ncy1ndWlkZVtvcGVuXSBzdW1tYXJ5OjphZnRlciB7IGNvbnRlbnQ6ICdbLV0nOyBmb250LWZhbWlseTogbW9ub3NwYWNlOyB9CiAgICAgICAgLmd1aWRlLWNvbnRlbnQgeyBwYWRkaW5nOiAwIDE1cHggMTVweDsgZm9udC1zaXplOiAxNHB4OyBsaW5lLWhlaWdodDogMS42OyBib3JkZXItdG9wOiAxcHggc29saWQgI2RkZDsgfQogICAgICAgIC5ndWlkZS1jb250ZW50IHN0cm9uZyB7IGRpc3BsYXk6IGJsb2NrOyBtYXJnaW4tdG9wOiAxMnB4OyBmb250LXNpemU6IDE1cHg7IH0KICAgICAgICAuZ3VpZGUtY29udGVudCB1bCB7IHBhZGRpbmctbGVmdDogMjBweDsgbWFyZ2luOiA1cHggMCAwOyB9CiAgICAgICAgLnNldHRpbmdzLWxpbmsgeyBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7IG1hcmdpbi10b3A6IDVweDsgcGFkZGluZzogNnB4IDEwcHg7IGJhY2tncm91bmQtY29sb3I6ICNlNGU2ZWI7IGNvbG9yOiAjMDUwNTA1OyB0ZXh0LWRlY29yYXRpb246IG5vbmU7IGJvcmRlci1yYWRpdXM6IDZweDsgZm9udC13ZWlnaHQ6IDYwMDsgfQoKICAgICAgICAjY29udHJvbHMgeyBkaXNwbGF5OiBncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmcjsgZ2FwOiAxMnB4OyB9CiAgICAgICAgI21haW4tY29udHJvbHMgeyBkaXNwbGF5OiBncmlkOyBncmlkLXRlbXBsYXRlLWNvbHVtbnM6IDFmciAxZnI7IGdhcDogMTJweDsgfQogICAgICAgIGJ1dHRvbiB7IGZvbnQtc2l6ZTogMTZweDsgZm9udC13ZWlnaHQ6IDYwMDsgcGFkZGluZzogMTJweDsgYm9yZGVyLXJhZGl1czogOHB4OyBib3JkZXI6IG5vbmU7IGN1cnNvcjogcG9pbnRlcjsgdHJhbnNpdGlvbjogYWxsIDAuMnMgZWFzZTsgfQogICAgICAgIGJ1dHRvbjphY3RpdmUgeyB0cmFuc2Zvcm06IHNjYWxlKDAuOTgpOyB9CiAgICAgICAgYnV0dG9uOmRpc2FibGVkIHsgY3Vyc29yOiBub3QtYWxsb3dlZDsgb3BhY2l0eTogMC42OyB9CiAgICAgICAgI2VuYWJsZS1idXR0b24geyBiYWNrZ3JvdW5kLWNvbG9yOiAjMTg3N2YyOyBjb2xvcjogd2hpdGU7IH0KICAgICAgICAjc3RhcnQtYnV0dG9uIHsgYmFja2dyb3VuZC1jb2xvcjogIzQyYjcyYTsgY29sb3I6IHdoaXRlOyB9CiAgICAgICAgI3N0b3AtYnV0dG9uIHsgYmFja2dyb3VuZC1jb2xvcjogI2ZhM2UzZTsgY29sb3I6IHdoaXRlOyB9CiAgICAgICAgI2Rvd25sb2FkLWJ1dHRvbiB7IGJhY2tncm91bmQtY29sb3I6ICMxODc3ZjI7IGNvbG9yOiB3aGl0ZTsgZ3JpZC1jb2x1bW46IDEgLyAtMTsgfSAvKiBTcGFuIGZ1bGwgd2lkdGggKi8KICAgICAgICAjc3RhdHVzLXRleHQgeyBtaW4taGVpZ2h0OiAyMHB4OyBtYXJnaW4tdG9wOiAxNXB4OyBmb250LXNpemU6IDE0cHg7IGNvbG9yOiAjNjA2NzcwOyB9CiAgICAgICAgCiAgICAgICAgI3BsYXliYWNrLWNvbnRhaW5lciB7IGRpc3BsYXk6IG5vbmU7IHdpZHRoOiA5MCU7IG1heC13aWR0aDogOTYwcHg7IGJhY2tncm91bmQtY29sb3I6ICNmZmZmZmY7IGJvcmRlci1yYWRpdXM6IDEycHg7IGJveC1zaGFkb3c6IDAgOHB4IDI0cHggcmdiYSgwLCAwLCAwLCAwLjEpOyBwYWRkaW5nOiAyNHB4OyB0ZXh0LWFsaWduOiBjZW50ZXI7IH0KICAgICAgICAjcGxheWJhY2stdmlkZW8geyB3aWR0aDogMTAwJTsgYm9yZGVyLXJhZGl1czogOHB4OyBtYXJnaW4tYm90dG9tOiAyMHB4OyBiYWNrZ3JvdW5kLWNvbG9yOiAjMDAwOyB9CiAgICAgICAgCiAgICAgICAgQGtleWZyYW1lcyByZWNvcmRpbmctcHVsc2UgeyAwJSwgMTAwJSB7IGJhY2tncm91bmQtY29sb3I6ICNmYTNlM2U7IH0gNTAlIHsgYmFja2dyb3VuZC1jb2xvcjogI2QzMmYyZjsgfSB9CiAgICAgICAgI3N0b3AtYnV0dG9uLnJlY29yZGluZyB7IGFuaW1hdGlvbjogcmVjb3JkaW5nLXB1bHNlIDEuNXMgaW5maW5pdGU7IH0KICAgIDwvc3R5bGU+CjwvaGVhZD4KPGJvZHk+CiAgICA8ZGl2IGlkPSJyZWNvcmRlci1jb250YWluZXIiIGNsYXNzPSJjb250YWluZXIiPgogICAgICAgIDxoMT5TaW1wbGUgJiBSZWxpYWJsZSBSZWNvcmRlcjwvaDE+CiAgICAgICAgPHA+VGhpcyB0b29sIHVzZXMgeW91ciBicm93c2VyJ3MgYnVpbHQtaW4gZGV2aWNlIHNlbGVjdGlvbi4gVGhlIHByb21wdCB3aWxsIGluY2x1ZGUgYSBkcm9wZG93biB0byBjaG9vc2UgeW91ciBjYW1lcmEgaWYgeW91IGhhdmUgbW9yZSB0aGFuIG9uZS48L3A+CiAgICAgICAgPHAgaWQ9InZpc2liaWxpdHktd2FybmluZyI+PHN0cm9uZz5JbXBvcnRhbnQ6PC9zdHJvbmc+IFRoaXMgd2luZG93IG11c3QgcmVtYWluIG9wZW4gYW5kIHZpc2libGUgZm9yIHRoZSByZWNvcmRpbmcgdG8gd29yay4gSWYgbWluaW1pemVkIG9yIGNvdmVyZWQsIHlvdXIgYnJvd3NlciBtYXkgdGhyb3R0bGUgdGhlIHZpZGVvIGNhcHR1cmUsIGNhdXNpbmcgaXQgdG8gZnJlZXplLjwvcD4KICAgICAgICA8ZGV0YWlscyBpZD0ic2V0dGluZ3MtZ3VpZGUiPgogICAgICAgICAgICA8c3VtbWFyeT5Ib3cgdG8gU2V0IFlvdXIgRGVmYXVsdCBEZXZpY2U8L3N1bW1hcnk+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9Imd1aWRlLWNvbnRlbnQiPgogICAgICAgICAgICAgICAgPHN0cm9uZz4xLiBSZXNldCBCcm93c2VyIFBlcm1pc3Npb25zIChJZiBOZWVkZWQpPC9zdHJvbmc+CiAgICAgICAgICAgICAgICA8dWw+PGxpPklmIHlvdSBkb24ndCBnZXQgYSBwZXJtaXNzaW9uIHBvcC11cCwgeW91IG1heSBoYXZlIHByZXZpb3VzbHkgYmxvY2tlZCBpdC48L2xpPjxsaT5DbGljayB0aGUgUGFkbG9jayBpY29uIGluIHRoZSBhZGRyZXNzIGJhciBhbmQgc2V0IENhbWVyYSBhbmQgTWljcm9waG9uZSB0byAiQWxsb3ciLjwvbGk+PC91bD4KICAgICAgICAgICAgICAgIDxzdHJvbmc+Mi4gU2V0IERlZmF1bHQgQXVkaW8gRGV2aWNlIGluIFdpbmRvd3M8L3N0cm9uZz4KICAgICAgICAgICAgICAgIDx1bD48bGk+Q2xpY2sgdGhpcyBsaW5rIHRvIG9wZW4gU291bmQgc2V0dGluZ3M6IDxhIGhyZWY9Im1zLXNldHRpbmdzOnNvdW5kIiBjbGFzcz0ic2V0dGluZ3MtbGluayI+T3BlbiBTb3VuZCBTZXR0aW5nczwvYT48L2xpPjxsaT5VbmRlciAiSW5wdXQiLCBjaG9vc2UgeW91ciBkZXNpcmVkIG1pY3JvcGhvbmUuIFRoaXMgd2lsbCBiZSB0aGUgYnJvd3NlcidzIGRlZmF1bHQuPC9saT48L3VsPgogICAgICAgICAgICAgICAgPHN0cm9uZz4zLiBTZXQgRGVmYXVsdCBBdWRpbyBEZXZpY2UgaW4gbWFjT1M8L3N0cm9uZz4KICAgICAgICAgICAgICAgIDx1bD48bGk+R28gdG8gPHN0cm9uZz5BcHBsZSBtZW51ID4gU3lzdGVtIFNldHRpbmdzID4gU291bmQ8L3N0cm9uZz4uPC9saT48bGk+SW4gdGhlICJJbnB1dCIgdGFiLCBzZWxlY3QgdGhlIGRldmljZSB5b3Ugd2FudCB0byB1c2UgYXMgeW91ciBkZWZhdWx0LjwvbGk+PC91bD4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kZXRhaWxzPgogICAgICAgIDxkaXYgaWQ9InByZXZpZXctYXJlYSI+CiAgICAgICAgICAgIDx2aWRlbyBpZD0ic2NyZWVuLXByZXZpZXciIGF1dG9wbGF5IG11dGVkPjwvdmlkZW8+CiAgICAgICAgICAgIDx2aWRlbyBpZD0id2ViY2FtLXByZXZpZXciIGF1dG9wbGF5IG11dGVkPjwvdmlkZW8+CiAgICAgICAgICAgIDxjYW52YXMgaWQ9ImNvbXBvc2l0aW5nLWNhbnZhcyI+PC9jYW52YXM+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBpZD0iY29udHJvbHMiPgogICAgICAgICAgICA8YnV0dG9uIGlkPSJlbmFibGUtYnV0dG9uIj5FbmFibGUgQ2FtZXJhICYgTWljPC9idXR0b24+CiAgICAgICAgICAgIDxkaXYgaWQ9Im1haW4tY29udHJvbHMiIHN0eWxlPSJkaXNwbGF5OiBub25lOyI+CiAgICAgICAgICAgICAgICA8YnV0dG9uIGlkPSJzdGFydC1idXR0b24iPlN0YXJ0IFJlY29yZGluZzwvYnV0dG9uPgogICAgICAgICAgICAgICAgPGJ1dHRvbiBpZD0ic3RvcC1idXR0b24iIGRpc2FibGVkPlN0b3AgUmVjb3JkaW5nPC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgaWQ9InN0YXR1cy10ZXh0Ij5DbGljayAiRW5hYmxlIENhbWVyYSAmIE1pYyIgdG8gc2hvdyB0aGUgcGVybWlzc2lvbiBwcm9tcHQuPC9kaXY+CiAgICA8L2Rpdj4KICAgIDxkaXYgaWQ9InBsYXliYWNrLWNvbnRhaW5lciI+CiAgICAgICAgPGgxPlJlY29yZGluZyBQbGF5YmFjazwvaDE+CiAgICAgICAgPHZpZGVvIGlkPSJwbGF5YmFjay12aWRlbyIgY29udHJvbHMgYXV0b3BsYXk+PC92aWRlbz4KICAgICAgICA8ZGl2IGlkPSJjb250cm9scyI+CiAgICAgICAgICAgIDxhIGlkPSJkb3dubG9hZC1saW5rIiBkb3dubG9hZD0icmVjb3JkaW5nLndlYm0iPjxidXR0b24gaWQ9ImRvd25sb2FkLWJ1dHRvbiI+RG93bmxvYWQgRmlsZTwvYnV0dG9uPjwvYT4KICAgICAgICA8L2Rpdj4KICAgIDwvZGl2PgogICAgPHNjcmlwdD4KICAgICAgICBjb25zdCBlbCA9IGlkID0+IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGlkKTsKICAgICAgICBjb25zdCBbcmVjb3JkZXJDb250YWluZXIsIHBsYXliYWNrQ29udGFpbmVyLCBlbmFibGVCdG4sIG1haW5Db250cm9scywgc3RhcnRCdG4sIHN0b3BCdG4sIHNjcmVlblByZXZpZXcsIHdlYmNhbVByZXZpZXcsIGNhbnZhcywgc3RhdHVzVGV4dCwgcGxheWJhY2tWaWRlbywgZG93bmxvYWRMaW5rXSA9CiAgICAgICAgICAgIFsncmVjb3JkZXItY29udGFpbmVyJywgJ3BsYXliYWNrLWNvbnRhaW5lcicsICdlbmFibGUtYnV0dG9uJywgJ21haW4tY29udHJvbHMnLCAnc3RhcnQtYnV0dG9uJywgJ3N0b3AtYnV0dG9uJywgJ3NjcmVlbi1wcmV2aWV3JywgJ3dlYmNhbS1wcmV2aWV3JywgJ2NvbXBvc2l0aW5nLWNhbnZhcycsICdzdGF0dXMtdGV4dCcsICdwbGF5YmFjay12aWRlbycsICdkb3dubG9hZC1saW5rJ10ubWFwKGlkID0+IGVsKGlkKSk7CiAgICAgICAgCiAgICAgICAgbGV0IGN0eCA9IGNhbnZhcy5nZXRDb250ZXh0KCcyZCcpOwogICAgICAgIGxldCBtZWRpYVJlY29yZGVyLCByZWNvcmRlZENodW5rcyA9IFtdLCBzY3JlZW5TdHJlYW0sIHVzZXJTdHJlYW0sIGFuaW1hdGlvbkZyYW1lSWQ7CiAgICAgICAgCiAgICAgICAgYXN5bmMgZnVuY3Rpb24gZW5hYmxlQ2FtZXJhQW5kTWljKCkgewogICAgICAgICAgICB0cnkgewogICAgICAgICAgICAgICAgZW5hYmxlQnRuLmRpc2FibGVkID0gdHJ1ZTsKICAgICAgICAgICAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSAiV2FpdGluZyBmb3IgcGVybWlzc2lvbi4uLiI7CiAgICAgICAgICAgICAgICB1c2VyU3RyZWFtID0gYXdhaXQgbmF2aWdhdG9yLm1lZGlhRGV2aWNlcy5nZXRVc2VyTWVkaWEoeyBhdWRpbzogdHJ1ZSwgdmlkZW86IHRydWUgfSk7CiAgICAgICAgICAgICAgICB3ZWJjYW1QcmV2aWV3LnNyY09iamVjdCA9IHVzZXJTdHJlYW07CiAgICAgICAgICAgICAgICB3ZWJjYW1QcmV2aWV3LnN0eWxlLmRpc3BsYXkgPSAnYmxvY2snOwogICAgICAgICAgICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9ICJDYW1lcmEgZW5hYmxlZC4gUmVhZHkgdG8gc3RhcnQgcmVjb3JkaW5nLiI7CiAgICAgICAgICAgICAgICBlbmFibGVCdG4uc3R5bGUuZGlzcGxheSA9ICdub25lJzsKICAgICAgICAgICAgICAgIG1haW5Db250cm9scy5zdHlsZS5kaXNwbGF5ID0gJ2dyaWQnOwogICAgICAgICAgICB9IGNhdGNoIChlcnIpIHsKICAgICAgICAgICAgICAgIGNvbnNvbGUuZXJyb3IoIkNhbWVyYS9NaWMgcGVybWlzc2lvbiBkZW5pZWQ6IiwgZXJyKTsKICAgICAgICAgICAgICAgIHN0YXR1c1RleHQuaW5uZXJIVE1MID0gIkNhbWVyYS9NaWMgcGVybWlzc2lvbiBkZW5pZWQuIDxicj5QbGVhc2UgY2hlY2sgc2V0dGluZ3MgaW4gdGhlIGd1aWRlIGFib3ZlIGFuZCByZWZyZXNoLiI7CiAgICAgICAgICAgICAgICBlbmFibGVCdG4uZGlzYWJsZWQgPSBmYWxzZTsKICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBhc3luYyBmdW5jdGlvbiBzdGFydFJlY29yZGluZygpIHsKICAgICAgICAgICAgdHJ5IHsKICAgICAgICAgICAgICAgIHN0YXJ0QnRuLmRpc2FibGVkID0gdHJ1ZTsKICAgICAgICAgICAgICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSAiUmVxdWVzdGluZyBzY3JlZW4gc2hhcmluZyBwZXJtaXNzaW9uLi4uIjsKICAgICAgICAgICAgICAgIHNjcmVlblN0cmVhbSA9IGF3YWl0IG5hdmlnYXRvci5tZWRpYURldmljZXMuZ2V0RGlzcGxheU1lZGlhKHsgdmlkZW86IHsgY3Vyc29yOiAnYWx3YXlzJyB9IH0pOwogICAgICAgICAgICAgICAgc2NyZWVuUHJldmlldy5zcmNPYmplY3QgPSBzY3JlZW5TdHJlYW07CiAgICAgICAgICAgICAgICBzY3JlZW5TdHJlYW0uZ2V0VmlkZW9UcmFja3MoKVswXS5vbmVuZGVkID0gKCkgPT4gbWVkaWFSZWNvcmRlcj8uc3RhdGUgPT09ICdyZWNvcmRpbmcnICYmIHN0b3BSZWNvcmRpbmcoKTsKICAgICAgICAgICAgICAgIGNvbnN0IHNjcmVlblNldHRpbmdzID0gc2NyZWVuU3RyZWFtLmdldFZpZGVvVHJhY2tzKClbMF0uZ2V0U2V0dGluZ3MoKTsKICAgICAgICAgICAgICAgIGNhbnZhcy53aWR0aCA9IHNjcmVlblNldHRpbmdzLndpZHRoOwogICAgICAgICAgICAgICAgY2FudmFzLmhlaWdodCA9IHNjcmVlblNldHRpbmdzLmhlaWdodDsKICAgICAgICAgICAgICAgIGRyYXdUb0NhbnZhcygpOwogICAgICAgICAgICAgICAgY29uc3QgYXVkaW9UcmFja3MgPSB1c2VyU3RyZWFtPy5nZXRBdWRpb1RyYWNrcygpIHx8IFtdOwogICAgICAgICAgICAgICAgY29uc3QgY2FudmFzU3RyZWFtID0gY2FudmFzLmNhcHR1cmVTdHJlYW0oMzApOwogICAgICAgICAgICAgICAgaWYgKGF1ZGlvVHJhY2tzLmxlbmd0aCA+IDApIGNhbnZhc1N0cmVhbS5hZGRUcmFjayhhdWRpb1RyYWNrc1swXSk7CiAgICAgICAgICAgICAgICByZWNvcmRlZENodW5rcyA9IFtdOwogICAgICAgICAgICAgICAgbWVkaWFSZWNvcmRlciA9IG5ldyBNZWRpYVJlY29yZGVyKGNhbnZhc1N0cmVhbSwgeyBtaW1lVHlwZTogJ3ZpZGVvL3dlYm07IGNvZGVjcz12cDksb3B1cycgfSk7CiAgICAgICAgICAgICAgICBtZWRpYVJlY29yZGVyLm9uZGF0YWF2YWlsYWJsZSA9IGUgPT4gZS5kYXRhLnNpemUgPiAwICYmIHJlY29yZGVkQ2h1bmtzLnB1c2goZS5kYXRhKTsKICAgICAgICAgICAgICAgIG1lZGlhUmVjb3JkZXIub25zdG9wID0gc2hvd1BsYXliYWNrOwogICAgICAgICAgICAgICAgbWVkaWFSZWNvcmRlci5zdGFydCgpOwogICAgICAgICAgICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9ICdSZWNvcmRpbmcgaW4gcHJvZ3Jlc3MuLi4nOwogICAgICAgICAgICAgICAgc3RvcEJ0bi5kaXNhYmxlZCA9IGZhbHNlOwogICAgICAgICAgICAgICAgc3RvcEJ0bi5jbGFzc0xpc3QuYWRkKCdyZWNvcmRpbmcnKTsKICAgICAgICAgICAgfSBjYXRjaCAoZXJyKSB7CiAgICAgICAgICAgICAgICBjb25zb2xlLmVycm9yKCJTdGFydCBSZWNvcmRpbmcgRmFpbGVkOiIsIGVycik7CiAgICAgICAgICAgICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gIlNjcmVlbiBzaGFyaW5nIHdhcyBkZW5pZWQuIFBsZWFzZSByZWZyZXNoIHRvIHRyeSBhZ2Fpbi4iOwogICAgICAgICAgICAgICAgc3RhcnRCdG4uZGlzYWJsZWQgPSBmYWxzZTsKICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBmdW5jdGlvbiBkcmF3VG9DYW52YXMoKSB7CiAgICAgICAgICAgIGN0eC5kcmF3SW1hZ2Uoc2NyZWVuUHJldmlldywgMCwgMCwgY2FudmFzLndpZHRoLCBjYW52YXMuaGVpZ2h0KTsKICAgICAgICAgICAgaWYgKHdlYmNhbVByZXZpZXcuc3R5bGUuZGlzcGxheSAhPT0gJ25vbmUnICYmIHdlYmNhbVByZXZpZXcudmlkZW9XaWR0aCA+IDApIHsKICAgICAgICAgICAgICAgIGNvbnN0IHdlYmNhbVdpZHRoID0gY2FudmFzLndpZHRoICogMC4yNTsKICAgICAgICAgICAgICAgIGNvbnN0IHdlYmNhbUhlaWdodCA9IHdlYmNhbVdpZHRoICogKHdlYmNhbVByZXZpZXcudmlkZW9IZWlnaHQgLyB3ZWJjYW1QcmV2aWV3LnZpZGVvV2lkdGgpOwogICAgICAgICAgICAgICAgY29uc3QgbWFyZ2luID0gY2FudmFzLndpZHRoICogMC4wMjsKICAgICAgICAgICAgICAgIGN0eC5kcmF3SW1hZ2Uod2ViY2FtUHJldmlldywgY2FudmFzLndpZHRoIC0gd2ViY2FtV2lkdGggLSBtYXJnaW4sIGNhbnZhcy5oZWlnaHQgLSB3ZWJjYW1IZWlnaHQgLSBtYXJnaW4sIHdlYmNhbVdpZHRoLCB3ZWJjYW1IZWlnaHQpOwogICAgICAgICAgICB9CiAgICAgICAgICAgIGFuaW1hdGlvbkZyYW1lSWQgPSByZXF1ZXN0QW5pbWF0aW9uRnJhbWUoZHJhd1RvQ2FudmFzKTsKICAgICAgICB9CiAgICAgICAgZnVuY3Rpb24gc3RvcFJlY29yZGluZygpIHsKICAgICAgICAgICAgaWYgKG1lZGlhUmVjb3JkZXI/LnN0YXRlID09PSAncmVjb3JkaW5nJykgbWVkaWFSZWNvcmRlci5zdG9wKCk7CiAgICAgICAgfQogICAgICAgIGZ1bmN0aW9uIHNob3dQbGF5YmFjaygpIHsKICAgICAgICAgICAgY2FuY2VsQW5pbWF0aW9uRnJhbWUoYW5pbWF0aW9uRnJhbWVJZCk7CiAgICAgICAgICAgIHN0b3BCdG4uZGlzYWJsZWQgPSB0cnVlOwogICAgICAgICAgICBzdG9wQnRuLmNsYXNzTGlzdC5yZW1vdmUoJ3JlY29yZGluZycpOwogICAgICAgICAgICBjb25zdCBibG9iID0gbmV3IEJsb2IocmVjb3JkZWRDaHVua3MsIHsgdHlwZTogJ3ZpZGVvL3dlYm0nIH0pOwogICAgICAgICAgICBjb25zdCB1cmwgPSBVUkwuY3JlYXRlT2JqZWN0VVJMKGJsb2IpOwogICAgICAgICAgICBwbGF5YmFja1ZpZGVvLnNyYyA9IHVybDsKICAgICAgICAgICAgZG93bmxvYWRMaW5rLmhyZWYgPSB1cmw7CiAgICAgICAgICAgIGRvd25sb2FkTGluay5kb3dubG9hZCA9IGByZWNvcmRpbmctJHtuZXcgRGF0ZSgpLnRvSVNPU3RyaW5nKCkuc2xpY2UoMCwxOSkucmVwbGFjZSgvW1Q6XS9nLCAnLScpfS53ZWJtYDsKICAgICAgICAgICAgW3NjcmVlblN0cmVhbSwgdXNlclN0cmVhbV0uZm9yRWFjaChzdHJlYW0gPT4gc3RyZWFtPy5nZXRUcmFja3MoKS5mb3JFYWNoKHRyYWNrID0+IHRyYWNrLnN0b3AoKSkpOwogICAgICAgICAgICByZWNvcmRlckNvbnRhaW5lci5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOwogICAgICAgICAgICBwbGF5YmFja0NvbnRhaW5lci5zdHlsZS5kaXNwbGF5ID0gJ2Jsb2NrJzsgLy8gVXNlICdibG9jaycgdG8gZml4IHRoZSBsYXlvdXQgaXNzdWUKICAgICAgICB9CiAgICAgICAgCiAgICAgICAgZW5hYmxlQnRuLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgZW5hYmxlQ2FtZXJhQW5kTWljKTsKICAgICAgICBzdGFydEJ0bi5hZGRFdmVudExpc3RlbmVyKCdjbGljaycsIHN0YXJ0UmVjb3JkaW5nKTsKICAgICAgICBzdG9wQnRuLmFkZEV2ZW50TGlzdGVuZXIoJ2NsaWNrJywgc3RvcFJlY29yZGluZyk7CiAgICA8L3NjcmlwdD4KPC9ib2R5Pgo8L2h0bWw+Cg=='; const decoded = atob(b64); const win = window.open(); win.document.write(decoded); win.document.close(); })();">
+                            <span class="icon is-small mr-2"><i class="fas fa-hand-rock"></i></span>
+                            <span>QuickRecord</span>
+                        </a>
+                        <p class="mt-4 is-size-6 has-text-weight-semibold"><span class="icon"><i class="fas fa-arrow-up"></i></span> Drag me to your bookmarks bar!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy; 2024 QuickRecord. All rights reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a>
+                <span class="mx-3">|</span>
+                <a href="#">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Prevent navigation when clicking the bookmarklet link itself
+        document.querySelector('.bookmarklet-link').addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('To install, click and DRAG this button to your bookmarks bar. Don\'t just click it!');
+        });
+    </script>
+</body>
+</html>
